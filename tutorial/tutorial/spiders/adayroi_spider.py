@@ -11,6 +11,7 @@ class QuotesSpider(scrapy.Spider):
     for i in range(1, 20):
        start_urls.append('https://www.adayroi.com/dien-thoai-di-dong-c323?q=%3Arelevance&page=' + str(i))
 
+    # go here first
     def parse(self, response):
         for url in response.css('a.product-item__info-title'):
             # get the product url in the category page
@@ -19,6 +20,7 @@ class QuotesSpider(scrapy.Spider):
             # parse it/ download it
             yield response.follow(product_url, callback=self.parseProduct)
 
+    # then go here
     def parseProduct(self, response):
         global count
 
