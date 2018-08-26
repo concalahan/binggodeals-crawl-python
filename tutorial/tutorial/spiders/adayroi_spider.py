@@ -45,8 +45,6 @@ class QuotesSpider(scrapy.Spider):
                     # get the largest pagination number
                     last_pagination_index = last_pagination_href[-2:]
 
-                    print(last_pagination_index)
-
                     for i in range(1, int(last_pagination_index)):
                         yield scrapy.Request('https://www.adayroi.com/dien-thoai-di-dong-c323?q=%3Arelevance&page=' + str(i), callback=self.parse)
 
