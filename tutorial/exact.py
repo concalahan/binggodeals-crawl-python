@@ -3,6 +3,7 @@
 from BeautifulSoup import BeautifulSoup as BS
 import urllib2
 import sys
+import html2text
 
 reload(sys)
 sys.setdefaultencoding('utf8')
@@ -11,13 +12,22 @@ def main():
     with open("export/[adayroi.com]phone-0.html") as fp:
         soup = BS(fp)
 
+        # HTML2Text: for exact text from html
+        h = html2text.HTML2Text()
+
         # get heading 1
         h1 = soup.h1.text
 
-        # get brand
-        top_desc = soup.findAll("div", {"class": "product-detail__title-brand"})
+        # get the category that adayroi define
+        category = soup.findAll("ol", {"class": "header__breadcrumb breadcrumb"})
+        for index, element in enumerate(category[0]):
+            if(index == 4):
+                print(element.text)
 
-        for index, a in enumerate(top_desc[0]):
+        # get brand
+        top_description = soup.findAll("div", {"class": "product-detail__title-brand"})
+
+        for index, a in enumerate(top_description[0]):
             if(type(a).__name__ == "Tag" and a.get('href') != None):
                 print(a.text)
 
@@ -32,6 +42,9 @@ def main():
         serial_number = soup.findAll("span", {"class": "panel-serial-number"})
         print(serial_number[0].text)
 
+        # get description
+        product_description = soup.findAll("div", {"class": "product-detail__description"})
+        #print(h.handle(str(product_description[0])))
 
 if __name__== "__main__":
     main()
