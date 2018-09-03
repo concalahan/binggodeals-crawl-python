@@ -1,4 +1,5 @@
 import os
+import json,codecs
 
 #Each website which is crawled is a separated project (folder)
 def create_project_dir(directory):
@@ -20,6 +21,10 @@ def write_file(path,data):
     f = open(path,'w')
     f.write(data)
     f.close()
+
+def write_json_file(path,data):
+    with open(path, 'wb') as f:
+        json.dump(data, codecs.getwriter('utf-8')(f), ensure_ascii=False)
 
 def append_to_file(path,data):
     with open(path, 'a') as file:

@@ -1,5 +1,5 @@
 from urllib.request import urlopen
-from link_finder import LinkFinder_Tiki
+from link_finder import LinkFinder
 from domain import *
 from general import *
 
@@ -51,8 +51,9 @@ class Spider:
                 html_bytes = response.read()
                 html_string = html_bytes.decode('utf-8').encode('cp850','replace').decode('cp850')
                 #html_string = html_bytes.decode("utf-8")
-            finder = LinkFinder_Tiki(Spider.base_url, page_url)
-            finder.getProductTiki(Spider.base_url)
+            finder = LinkFinder(Spider.base_url, page_url)
+            
+            finder.getProductUrlAdayroi()
 
             #finder.feed(html_string)
         except Exception as e:
