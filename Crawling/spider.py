@@ -3,9 +3,7 @@ from link_finder import LinkFinder
 from domain import *
 from general import *
 
-
 class Spider:
-
     project_name = ''
     base_url = ''
     domain_name = ''
@@ -25,8 +23,13 @@ class Spider:
     # Creates directory and files for project on first run and starts the spider
     @staticmethod
     def boot():
+        # create the directory
         create_project_dir(Spider.project_name)
+
+        # create queue.txt and crawled.txt
         create_data_files(Spider.project_name, Spider.base_url)
+
+        # read a file then convert each line to set items
         Spider.queue = file_to_set(Spider.queue_file)
         Spider.crawled = file_to_set(Spider.crawled_file)
 
@@ -34,7 +37,7 @@ class Spider:
     @staticmethod
     def crawl_page(thread_name, page_url):
         if page_url not in Spider.crawled:
-            print(thread_name + ' now crawling ' + page_url)
+            print(thread_name + ' is crawling ' + page_url)
             print('Queue ' + str(len(Spider.queue)) + ' | Crawled  ' + str(len(Spider.crawled)))
             Spider.add_links_to_queue(Spider.gather_links(page_url))
             Spider.queue.remove(page_url)
@@ -53,7 +56,8 @@ class Spider:
                 #html_string = html_bytes.decode("utf-8")
             finder = LinkFinder(Spider.base_url, page_url)
             
-            finder.getProductUrlAdayroi()
+            # change way of choosing finder here. Must make it reuseable later
+            finder.getProductUrlTiki()
 
             #finder.feed(html_string)
         except Exception as e:

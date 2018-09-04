@@ -12,7 +12,7 @@ class LinkFinder():
         self.page_url = page_url
         self.links = set()
 
-    def getProductUrlTiki(self, base_url):
+    def getProductUrlTiki(self):
         list_brand = ["apple","samsung","oppo","nokia","asus","sony","xiaomi"]
 # =============================================================================
 #         Code below is aim to get all URLs of each brand of phones in Tiki.vn
@@ -35,7 +35,7 @@ class LinkFinder():
 # =============================================================================
         brand_urls = set()
         for brand in list_brand:
-            url = 'https://tiki.vn/dien-thoai-may-tinh-bang/c1789/' + brand + '?src=mega-menu'
+            url = 'https://tiki.vn/dien-thoai-may-tinh-bang/c1789/' + brand
             brand_urls.add(url)
         
         url_and_numpage = dict()
