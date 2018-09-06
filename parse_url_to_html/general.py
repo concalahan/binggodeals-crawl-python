@@ -1,7 +1,7 @@
 import os
 import json,codecs
 
-#Each website which is crawled is a separated project (folder)
+# Each website which is crawled is a separated project (folder)
 def create_project_dir(directory):
     if not os.path.exists(directory) :
         print('Create directory : ' + directory)

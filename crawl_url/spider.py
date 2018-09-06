@@ -1,6 +1,5 @@
 from urllib.request import urlopen
 from link_finder import LinkFinder
-from domain import *
 from general import *
 
 class Spider:
@@ -57,7 +56,10 @@ class Spider:
             finder = LinkFinder(Spider.base_url, page_url)
             
             # change way of choosing finder here. Must make it reuseable later
-            finder.getProductUrlTiki()
+            if "adayroi" in Spider.base_url.lower():
+                finder.getProductUrlAdayroi()
+            elif "tiki" in Spider.base_url.lower():
+                finder.getProductUrlTiki()
 
             #finder.feed(html_string)
         except Exception as e:

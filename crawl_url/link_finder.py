@@ -5,7 +5,6 @@ from urllib import parse
 
 
 class LinkFinder():
-    
     def __init__(self, base_url, page_url):
         super().__init__()
         self.base_url = base_url
@@ -111,8 +110,6 @@ class LinkFinder():
                     self.links.add('https://www.adayroi.com' + anchor.get('href'))
         
         print("Stop crawling product URLs in Adayroi.com!")
-        
-        
 
         
     def page_links(self):
