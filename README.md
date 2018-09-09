@@ -10,3 +10,8 @@ Naming convention is not set yet
 
 ## Tutorial folder: Vu's doing
 - Run 'scrapy crawl adayroi'
+
+sudo apt-get install postfix
+
+lo chay cron ko dung dc ->
+pkill -u root cron
