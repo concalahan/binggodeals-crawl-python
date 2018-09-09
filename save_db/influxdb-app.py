@@ -1,73 +1,65 @@
 # -*- coding: utf-8 -*-
-"""Tutorial on using the InfluxDB client."""
 
-import argparse
+# Why we use influxdb:
+# Measurements are like buckets.
+# Tags are indexed values.
+# Fields are the actual data.
+# Data is written into InfluxDB via line protocol
 
 from influxdb import InfluxDBClient
+from influxdb import SeriesHelper
+import datetime
 
-def main(host='localhost', port=8086):
-    """Instantiate a connection to the InfluxDB."""
-    user = 'root'
-    password = 'nvu123456'
-    dbname = 'example'
-    dbuser = 'smly'
-    dbuser_password = 'my_secret_password'
-    query = 'select value from cpu_load_short;'
-    json_body = [
-        {
-            "measurement": "cpu_load_short",
-            "tags": {
-                "host": "server01",
-                "region": "us-west"
-            },
-            "time": "2009-11-10T23:00:00Z",
-            "fields": {
-                "Float_value": 0.64,
-                "Int_value": 3,
-                "String_value": "Text",
-                "Bool_value": True
-            }
-        }
-    ]
+# InfluxDB connections settings
+host = 'localhost'
+port = 8086
+user = 'root'
+password = 'nvu123456'
+dbname = 'mydb'
 
-    client = InfluxDBClient(host, port, user, password, dbname)
+myclient = InfluxDBClient(host, port, user, password, dbname)
 
-    print("Create database: " + dbname)
-    client.create_database(dbname)
+now = datetime.datetime.now()
 
-    print("Create a retention policy")
-    client.create_retention_policy('awesome_policy', '3d', 3, default=True)
-
-    print("Switch user: " + dbuser)
-    client.switch_user(dbuser, dbuser_password)
-
-    print("Write points: {0}".format(json_body))
-    client.write_points(json_body)
-
-    print("Querying data: " + query)
-    result = client.query(query)
-
-    print("Result: {0}".format(result))
-
-    print("Switch user: " + user)
-    client.switch_user(user, password)
-
-    print("Drop database: " + dbname)
-    client.drop_database(dbname)
+# Uncomment the following code if the database is not yet created
+myclient.create_database(dbname)
+myclient.create_retention_policy('awesome_policy', '3d', 3, default=True)
 
 
-def parse_args():
-    """Parse the args."""
-    parser = argparse.ArgumentParser(
-        description='example code to play with InfluxDB')
-    parser.add_argument('--host', type=str, required=False,
-                        default='localhost',
-                        help='hostname of InfluxDB http API')
-    parser.add_argument('--port', type=int, required=False, default=8086,
-                        help='port of InfluxDB http API')
-    return parser.parse_args()
+class MySeriesHelper(SeriesHelper):
+    """Instantiate SeriesHelper to write points to the backend."""
+
+    class Meta:
+        """Meta class stores time series helper configuration."""
+
+        # The client should be an instance of InfluxDBClient.
+        client = myclient
+
+        # The series name must be a string. Add dependent fields/tags
+        # in curly brackets.
+        series_name = 'products'
+
+        # Defines all the fields in this time series.
+        fields = ['time', 'origin_price', 'true_price']
+
+        # Defines all the tags for the series.
+        tags = ['product_url']
+
+        # Defines the number of data points to store prior to writing
+        # on the wire.
+        bulk_size = 5
+
+        # autocommit must be set to True when using bulk_size
+        autocommit = True
 
 
-if __name__ == '__main__':
-    args = parse_args()
-    main(host=args.host, port=args.port)
+# The following will create *five* (immutable) data points.
+# Since bulk_size is set to 5, upon the fifth construction call, *all* data
+# points will be written on the wire via MySeriesHelper.Meta.client.
+MySeriesHelper(product_url='https://tiki.vn/dien-thoai-nokia-1-hang-chinh-hang-p1666629.html?src=recently-viewed', time=now, origin_price=1331, true_price=1330)
+
+# To manually submit data points which are not yet written, call commit:
+MySeriesHelper.commit()
+
+# To inspect the JSON which will be written, call _json_body_():
+MySeriesHelper._json_body_()
