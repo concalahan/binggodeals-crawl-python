@@ -6,7 +6,7 @@ from json_export import *
 
 # This sub-project is to crawl all the url in some sites and export to file
 
-PROJECT_NAME = 'tiki'
+PROJECT_NAME = 'tiki.vn'
 HOMEPAGE = 'https://tiki.vn/dien-thoai-may-tinh-bang/c1789'
 QUEUE_FILE = PROJECT_NAME + '/queue.txt'
 CRAWLED_FILE = PROJECT_NAME + '/crawled.txt'

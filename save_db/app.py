@@ -1,38 +1,49 @@
 
 from arctic import Arctic
-from datetime import datetime as dt
+from datetime import datetime
 import pandas as pd
+import os
+import json
 
+now = datetime.now()
 
-# Connect to the mongo-host / cluster
-store = Arctic('localhost')
+READ_DIR = '../data/' + str(now.year) + '/' + str(now.month) + '/' + str(now.day) + '/json/'
 
-# Data is grouped into 'libraries'.
-# Users may have one or more named libraries:
+def main():
+    # Connect to the mongo-host / cluster
+    store = Arctic('localhost')
 
-# Create a library
-store.initialize_library('vu.product_price')
+    # Data is grouped into 'libraries'.
+    # Users may have one or more named libraries:
 
-# Get a library
-# library = m['username.<library>']
-library = store['vu.product_price']
+    # Create a library
+    store.initialize_library('vu.product_1')
 
-# Store some data in the library
-df = pd.DataFrame({'prices': [1, 2, 3]},
-                  [dt(2014, 1, 1), dt(2014, 1, 2), dt(2014, 1, 3)])
-library.write('SYMBOL', df)
+    # Get a library
+    # library = m['username.<library>']
+    library = store['vu.product_1']
 
-# Read some data from the library
-# (Note the returned object has an associated version number and metadata.)
-library.read('SYMBOL')
+    for filename in os.listdir(READ_DIR):
 
-# Store some data into the library
-library.write('MY_DATA', library.read('SYMBOL').data)
+        with open(READ_DIR + filename) as fp:
+            data = json.load(fp)
+            # print(data['url'])
 
-# What symbols (keys) are stored in the library
-library.write('MY_DATA', library.read('SYMBOL').data, metadata={'some_key': 'some_value'})
+            # Store some data in the library
+            library.write('PRODUCT', data)
 
-print("AAAA")
+            # # Read some data from the library
+            # # (Note the returned object has an associated version number and metadata.)
+            # library.read('SYMBOL')
 
-# Find available versions of a symbol
-print(library.read('SYMBOL', as_of=1).data)
+            # # Store some data into the library
+            # library.write('MY_DATA', library.read('SYMBOL').data)
+
+            # # What symbols (keys) are stored in the library
+            # library.write('MY_DATA', library.read('SYMBOL').data, metadata={'some_key': 'some_value'})
+
+            # # Find available versions of a symbol
+            # print(library.read('SYMBOL', as_of=1).data)
+
+if __name__== "__main__":
+    main()

@@ -64,6 +64,7 @@ class LinkFinder():
                 anchors = division.find_all('a')
                 for anchor in anchors:
                     self.links.add(anchor.get('href'))
+                
         
         print("Stop crawling product URLs in Tiki.vn!")
     

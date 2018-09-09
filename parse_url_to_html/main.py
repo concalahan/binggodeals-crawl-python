@@ -4,18 +4,21 @@ from html.parser import HTMLParser
 from bs4 import BeautifulSoup
 from urllib.request import urlopen
 from urllib import parse
+import datetime
 import sys
 import os, os.path
 
 sys.path.append(os.path.realpath('..'))
 
-PROJECT_NAME = 'tiki'
+PROJECT_NAME = 'tiki.vn'
 
 # read from another project
 READ_DIR = '../crawl_url/' + PROJECT_NAME + '/'
 
+now = datetime.datetime.now()
+
 # save to this directory
-WRITE_DIR = '../data/raw_products/'
+WRITE_DIR = '../data/' + str(now.year) + '/' + str(now.month) + '/' + str(now.day) + '/raw/'
 
 def create_project_dir(directory):
     if not os.path.exists(directory) :
@@ -24,19 +27,43 @@ def create_project_dir(directory):
     else:
         print(directory + ' is already created !')
 
+# pre-processing the url for save as file name
+def preprocessing_url(url):
+    # delete every thing after ?, ex: ?src="bla bla"
+    url = url.split('?', 1)[0]
+
+    # delete the protocol
+    if 'https://' in url:
+        url = url[8:]
+    else:
+        url = url[7:]
+
+    # delete .
+    for ch in ['.vn/','.com/', '.net/']:
+        if ch in url:
+            url = url.replace(ch, "|")
+
+    return url
+
 def main():
     # create the directory if not empty
     create_project_dir(WRITE_DIR)
 
     with open(READ_DIR + "queue.txt") as fp:
-        index = 0
         for url in fp:
             soup = BeautifulSoup(urlopen(url),"lxml")
 
-            with open(WRITE_DIR + '[' + PROJECT_NAME + ']raw_' + str(index) + '.html', 'w') as the_file:
-                the_file.write(str(soup))
-            
-            index += 1
+            url = preprocessing_url(url)
 
+            # if the url ending with .html (ex: tiki.vn)
+            if '.html' in url and '/' not in url:
+                # the example result:
+                # tiki|bo-dien-thoai-nokia-x5-32gb-3gb.html
+                with open(WRITE_DIR + str(url), 'w') as the_file:
+                    the_file.write(str(soup))
+            elif '/' not in url:
+                with open(WRITE_DIR + str(url) + '.html', 'w') as the_file:
+                    the_file.write(str(soup))
+            
 if __name__== "__main__":
     main()
