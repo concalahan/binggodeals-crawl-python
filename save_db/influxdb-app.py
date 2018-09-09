@@ -9,6 +9,13 @@
 from influxdb import InfluxDBClient
 from influxdb import SeriesHelper
 import datetime
+import os
+import json
+
+now = datetime.datetime.now()
+
+# the place store filter json file
+READ_DIR = '../data/' + str(now.year) + '/' + str(now.month) + '/' + str(now.day) + '/json/'
 
 # InfluxDB connections settings
 host = 'localhost'
@@ -18,8 +25,6 @@ password = 'nvu123456'
 dbname = 'mydb'
 
 myclient = InfluxDBClient(host, port, user, password, dbname)
-
-now = datetime.datetime.now()
 
 # Uncomment the following code if the database is not yet created
 myclient.create_database(dbname)
@@ -52,14 +57,22 @@ class MySeriesHelper(SeriesHelper):
         # autocommit must be set to True when using bulk_size
         autocommit = True
 
+for filename in os.listdir(READ_DIR):
+    with open(READ_DIR + filename) as fp:
+        data = json.load(fp)
+        # points will be written on the wire via MySeriesHelper.Meta.client.
+        # the product URL will be the key -> for faster index and search
 
-# The following will create *five* (immutable) data points.
-# Since bulk_size is set to 5, upon the fifth construction call, *all* data
-# points will be written on the wire via MySeriesHelper.Meta.client.
-MySeriesHelper(product_url='https://tiki.vn/dien-thoai-nokia-1-hang-chinh-hang-p1666629.html?src=recently-viewed', time=now, origin_price=1331, true_price=1330)
+        print("Process " + str(data['url']))
 
-# To manually submit data points which are not yet written, call commit:
-MySeriesHelper.commit()
+        MySeriesHelper(
+            product_url=data['url'], 
+            time=data['created'], 
+            origin_price=data['origin_price'], 
+            true_price=data['true_price'])
+
+        # To manually submit data points which are not yet written, call commit:
+        MySeriesHelper.commit()
 
 # To inspect the JSON which will be written, call _json_body_():
-MySeriesHelper._json_body_()
+# MySeriesHelper._json_body_()
