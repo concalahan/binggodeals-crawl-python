@@ -46,7 +46,7 @@ def main():
     export_files_length = len([name for name in os.listdir(READ_DIR) if os.path.isfile(os.path.join(READ_DIR, name))])
 
     for filename in os.listdir(READ_DIR):
-        print("Processing file: " + str(filename))
+        #print("Processing file: " + str(filename))
 
         with open(READ_DIR + filename) as fp:
             data = {}
@@ -58,6 +58,22 @@ def main():
 
             # delete .html
             filenameNotHtml = filename[:-5]
+
+            url = ''
+            meaningful_url = ''
+            name = ''
+            category = ''
+            store = ''
+            description = ''
+            true_price = ''
+            origin_price = ''
+
+            # all sites share this
+            url = soup.findAll("link", {"rel": "canonical"})
+            url = url[0]['href']
+
+            # get the product name
+            name = soup.h1.text
 
             # get meaningful url: dien thoai nokia 105 dual sim 2017 hang chinh hang
             # convert - to ''
@@ -72,54 +88,103 @@ def main():
             # delete all char after that index
             meaningful_url = meaningful_url[:indexLastSpace]
 
-            # get the product that tiki define
-            name = soup.h1.text
+            if('tiki' in PROJECT_NAME):
+                # get the category that tiki define
+                category_temp = soup.findAll("ul", {"class": "breadcrumb"})
+                category = ''
 
-            url = soup.findAll("link", {"rel": "canonical"})
-            url = url[0]['href']
+                # ensure the category is not empty
+                if(len(category_temp) != 0):
+                    for i, element in enumerate(category_temp[0]):
+                        if(i == 3):
+                            category = element.text
 
-            # get the category that tiki define
-            category_temp = soup.findAll("ul", {"class": "breadcrumb"})
-            category = ''
+                # get the store that tiki define
+                store = soup.findAll("div", {"class": "current-seller"})
 
-            for i, element in enumerate(category_temp[0]):
-                if(i == 3):
-                    category = element.text
+                # ensure the store is not empty
+                if(len(store) != 0):
+                    store = store[0].text
+                else:
+                    store = ''
 
-            # get the store that tiki define
-            store = soup.findAll("div", {"class": "current-seller"})
+                description_temp = soup.findAll("div", {"class": "top-feature-item"})
+                description_temp_2 = soup.findAll("div", {"class": "product-description"})
+                
+                product_description_1 = ''
+                if(len(description_temp) != 0):
+                    product_description_1 = h.handle(str(description_temp[0]))
 
-            # ensure the store is not empty
-            if(len(store) != 0):
-                store = store[0].text
+                product_description_2 = ''
+                if(len(description_temp_2) != 0):
+                    product_description_2 = h.handle(str(description_temp_2[0]))
+
+                # get the product description that tiki define
+                description = product_description_1 + "\n" + product_description_2
+
+                # get the origin and true price that tiki define
+                true_price = soup.findAll("span", {"id": "span-price"})[0].text
+                origin_price = soup.findAll("span", {"id": "span-list-price"})[0].text
+
             else:
-                store = ''
+                # get the category that adayroi define
+                category_temp = soup.findAll("ol", {"class": "header__breadcrumb"})
+                category = ''
 
-            description_temp = soup.findAll("div", {"class": "top-feature-item"})
-            description_temp_2 = soup.findAll("div", {"class": "product-description"})
-            
-            product_description_1 = ''
-            if(len(description_temp) != 0):
-                product_description_1 = h.handle(str(description_temp[0]))
+                # ensure the category is not empty
+                if(len(category_temp) != 0):
+                    for i, element in enumerate(category_temp[0]):
+                        if(i == 4):
+                            category = element.text
 
-            product_description_2 = ''
-            if(len(description_temp_2) != 0):
-                product_description_2 = h.handle(str(description_temp_2[0]))
+                # get the store that adayroi define
+                store = soup.findAll("div", {"class": "product-detail__sidebar__merchant"})
 
-            # get the product description that tiki define
-            product_description = product_description_1 + "\n" + product_description_2
+                # ensure the store is not empty
+                if(len(store) != 0):
+                    store = store[0].text
+                else:
+                    store = ''
 
-            # get the origin and true price that tiki define
-            true_price = soup.findAll("span", {"id": "span-price"})[0].text
-            origin_price = soup.findAll("span", {"id": "span-list-price"})[0].text
+                store = store.split('bởi')[1]
 
+                description_temp = soup.findAll("div", {"class": "short-des__content"})
+                description_temp_2 = soup.findAll("div", {"class": "col-sm-12 detail__info"})
+
+                product_description_1 = ''
+                if(len(description_temp) != 0):
+                    product_description_1 = h.handle(str(description_temp[0]))
+
+                product_description_2 = ''
+                if(len(description_temp_2) != 0):
+                    product_description_2 = h.handle(str(description_temp_2[0]))
+
+                description = product_description_1 + "\n" +  product_description_2
+
+                # get the origin and true price that adayroi define
+                origin_price = soup.findAll("span", {"class": "price-info__sale"})
+
+                if(len(origin_price) != 0):
+                    origin_price = origin_price[0].text
+                else:
+                    # out of order
+                    origin_price = 0
+
+                true_price = soup.findAll("span", {"class": "price-vinid__value"})
+
+                # if there is discount by vinid
+                if(len(true_price) != 0):
+                    true_price = true_price[0].text
+                else:
+                    true_price = origin_price
+                
             # add to one object
             data['url'] = url
             data['meaningful_url'] = meaningful_url
             data['name'] = name
             data['category'] = category
             data['store'] = store
-            data['product_description'] = product_description
+            data['description'] = description
             data['true_price'] = true_price
             data['origin_price'] = origin_price
             data['created'] = json_serial(now)

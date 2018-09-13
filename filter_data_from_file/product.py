@@ -1,17 +1,21 @@
 class Product:
+    url = ''
+    meaningful_url = ''
     name = ''
     category = ''
-    store_name = ''
+    store = ''
     description = ''
-    price = set()
+    true_price = ''
+    origin_price = ''
+    created = ''
 
     def __init__(self, name, category, store_name, description, price):
+        Product.url = url
+        Product.meaningful_url = meaningful_url
         Product.name = name
         Product.category = category
-        Product.store_name = store_name
+        Product.store = store
         Product.description = description
-        Product.price = price
-        # self.boot()
-
-    # Creates directory and files for project on first run and starts the spider
-    # def boot():
+        Product.true_price = true_price
+        Product.origin_price = origin_price
+        Product.created = created

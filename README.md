@@ -15,22 +15,34 @@ Note: Naming convention is not set yet
 
 ## How to run it
 ### Project 1:
-```python3 main.py HOMEPAGE CATEGORY_URL```
+```
+python3 main.py HOMEPAGE CATEGORY_URL
+```
 
 for example:
-```python3 main.py tiki.vn https://tiki.vn/dien-thoai-may-tinh-bang/c1789```
+```
+python3 main.py tiki.vn https://tiki.vn/dien-thoai-may-tinh-bang/c1789
+```
 
 ### Project 2:
-```python3 main.py HOMEPAGE```
+```
+python3 main.py HOMEPAGE
+```
 
 for example:
-```python3 main.py tiki.vn```
+```
+python3 main.py tiki.vn
+```
 
 ### Project 3:
-```python3 main.py HOMEPAGE```
+```
+python3 main.py HOMEPAGE
+```
 
 for example:
-```python3 main.py tiki.vn```
+```
+python3 main.py tiki.vn
+```
 
 ### Project 4:
 #### Influx DB basic syntax
