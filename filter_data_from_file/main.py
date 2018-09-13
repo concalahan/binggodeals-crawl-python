@@ -75,6 +75,8 @@ def main():
             # get the product name
             name = soup.h1.text
 
+            print("Process product " + name)
+
             # get meaningful url: dien thoai nokia 105 dual sim 2017 hang chinh hang
             # convert - to ''
             meaningful_url = filenameNotHtml.replace("-", " ")
@@ -167,8 +169,8 @@ def main():
                 if(len(origin_price) != 0):
                     origin_price = origin_price[0].text
                 else:
-                    # out of order
-                    origin_price = 0
+                    # out of order, must be string because the db is currently store as string
+                    origin_price = "0"
 
                 true_price = soup.findAll("span", {"class": "price-vinid__value"})
 
