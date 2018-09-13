@@ -32,3 +32,40 @@ for example:
 for example:
 ```python3 main.py tiki.vn```
 
+### Project 4:
+#### Influx DB basic syntax
+
+**Start the Database**
+```
+systemctl start influxdb
+```
+
+**Start shell**
+```
+influx
+```
+
+**Use the database**
+```
+use mydb
+```
+
+**Show list database**
+```
+show databases
+```
+
+**Get list column**
+```
+select * from /.*/ limit 1
+```
+
+**Get field**
+```
+show field keys
+```
+
+**Select all row**
+```
+select * from /.*/
+```

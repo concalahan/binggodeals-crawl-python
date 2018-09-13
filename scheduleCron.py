@@ -27,15 +27,11 @@ filter_data_from_file_job.day.every(3)
 my_cron.write()
 
 save_db_job = my_cron.new(
-    command='cd ' + dir_path + '/save_db; python3 main.py',
+    command='cd ' + dir_path + '/save_db; python3 influxdb-app.py',
     comment='read .json file and save to influxdb')
 save_db_job.day.every(4)
 my_cron.write()
 
-for job in my_cron:
-    print(job)
-
-
 # for stoping the cron task
-my_cron.remove_all()
-my_cron.write()
+# my_cron.remove_all()
+# my_cron.write()
