@@ -3,15 +3,30 @@ from queue import Queue
 from spider import Spider
 from general import *
 from json_export import *
+import sys
 
-# This sub-project is to crawl all the url in some sites and export to file
+def main():
+    # Get the argument
+    arg_len = len(sys.argv)
 
-PROJECT_NAME = 'tiki.vn'
-HOMEPAGE = 'https://tiki.vn/dien-thoai-may-tinh-bang/c1789'
-QUEUE_FILE = PROJECT_NAME + '/queue.txt'
-CRAWLED_FILE = PROJECT_NAME + '/crawled.txt'
-NUMBER_OF_THREADS = 8
+    if(arg_len != 3):
+        print("Arguments must be in format: python3 main.py HOMEPAGE CATEGORY_URL")
+        return
 
-#queue = Queue()
-Spider(PROJECT_NAME, HOMEPAGE)
-#export_to_json(PROJECT_NAME)
+    # HOMEPAGE = 'tiki.vn'
+    # CATEGORY_URL = 'https://tiki.vn/dien-thoai-may-tinh-bang/c1789'
+
+    HOMEPAGE = sys.argv[1]
+    CATEGORY_URL = sys.argv[2]
+
+    # This sub-project is to crawl all the url in some sites and export to file
+    QUEUE_FILE = HOMEPAGE + '/queue.txt'
+    CRAWLED_FILE = HOMEPAGE + '/crawled.txt'
+    NUMBER_OF_THREADS = 8
+
+    #queue = Queue()
+    Spider(HOMEPAGE, CATEGORY_URL)
+    #export_to_json(PROJECT_NAME)
+
+if __name__== "__main__":
+    main()

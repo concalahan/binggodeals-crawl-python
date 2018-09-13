@@ -10,16 +10,6 @@ import datetime
 
 sys.path.append(os.path.realpath('..'))
 
-PROJECT_NAME = 'tiki.vn'
-
-now = datetime.datetime.now()
-
-# read data from this directory
-READ_DIR = '../data/' + str(now.year) + '/' + str(now.month) + '/' + str(now.day) + '/raw/'
-
-# read data from this directory
-WRITE_DIR = '../data/' + str(now.year) + '/' + str(now.month) + '/' + str(now.day) + '/json/'
-
 def create_project_dir(directory):
     if not os.path.exists(directory) :
         print('Create directory : ' + directory)
@@ -35,6 +25,20 @@ def json_serial(obj):
     raise TypeError ("Type %s not serializable" % type(obj))
 
 def main():
+    if(len(sys.argv) != 2):
+        print("Arguments must be in format: python3 main.py HOMEPAGE")
+        return
+
+    PROJECT_NAME = sys.argv[1]
+
+    now = datetime.datetime.now()
+
+    # read data from this directory
+    READ_DIR = '../data/' + str(now.year) + '/' + str(now.month) + '/' + str(now.day) + '/raw/'
+
+    # read data from this directory
+    WRITE_DIR = '../data/' + str(now.year) + '/' + str(now.month) + '/' + str(now.day) + '/json/'
+
     # create the directory if not empty
     create_project_dir(WRITE_DIR)
 
@@ -83,7 +87,13 @@ def main():
                     category = element.text
 
             # get the store that tiki define
-            store = soup.findAll("div", {"class": "current-seller"})[0].text
+            store = soup.findAll("div", {"class": "current-seller"})
+
+            # ensure the store is not empty
+            if(len(store) != 0):
+                store = store[0].text
+            else:
+                store = ''
 
             description_temp = soup.findAll("div", {"class": "top-feature-item"})
             description_temp_2 = soup.findAll("div", {"class": "product-description"})

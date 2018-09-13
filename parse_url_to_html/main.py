@@ -10,16 +10,6 @@ import os, os.path
 
 sys.path.append(os.path.realpath('..'))
 
-PROJECT_NAME = 'tiki.vn'
-
-# read from another project
-READ_DIR = '../crawl_url/' + PROJECT_NAME + '/'
-
-now = datetime.datetime.now()
-
-# save to this directory
-WRITE_DIR = '../data/' + str(now.year) + '/' + str(now.month) + '/' + str(now.day) + '/raw/'
-
 def create_project_dir(directory):
     if not os.path.exists(directory) :
         print('Create directory : ' + directory)
@@ -46,6 +36,20 @@ def preprocessing_url(url):
     return url
 
 def main():
+    if(len(sys.argv) != 2):
+        print("Arguments must be in format: python3 main.py HOMEPAGE")
+        return
+
+    PROJECT_NAME = sys.argv[1]
+
+    # read from another project
+    READ_DIR = '../crawl_url/' + PROJECT_NAME + '/'
+
+    now = datetime.datetime.now()
+
+    # save to this directory
+    WRITE_DIR = '../data/' + str(now.year) + '/' + str(now.month) + '/' + str(now.day) + '/raw/'
+
     # create the directory if not empty
     create_project_dir(WRITE_DIR)
 
@@ -54,6 +58,8 @@ def main():
             soup = BeautifulSoup(urlopen(url),"lxml")
 
             url = preprocessing_url(url)
+
+            print("Processing file " + str(url))
 
             # if the url ending with .html (ex: tiki.vn)
             if '.html' in url and '/' not in url:
