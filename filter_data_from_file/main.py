@@ -70,12 +70,15 @@ def main():
 
             # all sites share this
             url = soup.findAll("link", {"rel": "canonical"})
+
+            print(url)
+
             url = url[0]['href']
 
             # get the product name
             name = soup.h1.text
 
-            print("Process product " + name)
+            # print("Process product " + name)
 
             # get meaningful url: dien thoai nokia 105 dual sim 2017 hang chinh hang
             # convert - to ''
