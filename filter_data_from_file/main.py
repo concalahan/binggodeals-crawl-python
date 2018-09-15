@@ -25,12 +25,6 @@ def json_serial(obj):
     raise TypeError ("Type %s not serializable" % type(obj))
 
 def main():
-    if(len(sys.argv) != 2):
-        print("Arguments must be in format: python3 main.py HOMEPAGE")
-        return
-
-    PROJECT_NAME = sys.argv[1]
-
     now = datetime.datetime.now()
 
     # read data from this directory
@@ -71,7 +65,7 @@ def main():
             # all sites share this
             url = soup.findAll("link", {"rel": "canonical"})
 
-            print("Process " + url)
+            print("Process " + str(url))
 
             # if no canonical url found, skip the iteration
             if(len(url) == 0):
@@ -97,7 +91,7 @@ def main():
             # delete all char after that index
             meaningful_url = meaningful_url[:indexLastSpace]
 
-            if('tiki' in PROJECT_NAME):
+            if('tiki' in filename):
                 # get the category that tiki define
                 category_temp = soup.findAll("ul", {"class": "breadcrumb"})
                 category = ''
