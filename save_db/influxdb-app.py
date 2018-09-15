@@ -27,8 +27,8 @@ dbname = 'mydb'
 myclient = InfluxDBClient(host, port, user, password, dbname)
 
 # Uncomment the following code if the database is not yet created
-myclient.create_database(dbname)
-myclient.create_retention_policy('awesome_policy', '3d', 3, default=True)
+# myclient.create_database(dbname)
+# myclient.create_retention_policy('awesome_policy', '3d', 3, default=True)
 
 
 class MySeriesHelper(SeriesHelper):
