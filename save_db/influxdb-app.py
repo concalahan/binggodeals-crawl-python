@@ -20,7 +20,7 @@ READ_DIR = '../data/' + str(now.year) + '/' + str(now.month) + '/' + str(now.day
 # InfluxDB connections settings
 host = 'localhost'
 port = 8086
-user = 'root'
+user = 'admin' # root/ admin
 password = 'nvu123456'
 dbname = 'mydb'
 
