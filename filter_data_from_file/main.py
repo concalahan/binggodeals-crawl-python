@@ -124,9 +124,22 @@ def main():
                 # get the product description that tiki define
                 description = product_description_1 + "\n" + product_description_2
 
-                # get the origin and true price that tiki define
-                true_price = soup.findAll("span", {"id": "span-price"})[0].text
-                origin_price = soup.findAll("span", {"id": "span-list-price"})[0].text
+                # get the origin and true price that adayroi define
+                origin_price = soup.findAll("span", {"id": "span-list-price"})
+
+                if(len(origin_price) != 0):
+                    origin_price = origin_price[0].text
+                else:
+                    # out of order, must be string because the db is currently store as string
+                    origin_price = "0"
+
+                true_price = soup.findAll("span", {"id": "span-price"})
+
+                # if there is discount by vinid
+                if(len(true_price) != 0):
+                    true_price = true_price[0].text
+                else:
+                    true_price = origin_price
 
             else:
                 # get the category that adayroi define
