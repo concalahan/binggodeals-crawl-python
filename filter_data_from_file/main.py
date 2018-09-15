@@ -71,13 +71,13 @@ def main():
             # all sites share this
             url = soup.findAll("link", {"rel": "canonical"})
 
+            print("Process " + url)
+
             # if no canonical url found, skip the iteration
             if(len(url) == 0):
                 continue
 
             url = url[0]['href']
-
-            print("Process " + url)
 
             # get the product name
             name = soup.h1.text
