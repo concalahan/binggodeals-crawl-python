@@ -40,7 +40,7 @@ def main():
     export_files_length = len([name for name in os.listdir(READ_DIR) if os.path.isfile(os.path.join(READ_DIR, name))])
 
     for filename in os.listdir(READ_DIR):
-        #print("Processing file: " + str(filename))
+        print("Processing file: " + str(filename))
 
         with open(READ_DIR + filename) as fp:
             data = {}
@@ -64,8 +64,6 @@ def main():
 
             # all sites share this
             url = soup.findAll("link", {"rel": "canonical"})
-
-            print("Process " + str(url))
 
             # if no canonical url found, skip the iteration
             if(len(url) == 0):
