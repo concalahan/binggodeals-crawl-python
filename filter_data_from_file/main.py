@@ -25,12 +25,6 @@ def json_serial(obj):
     raise TypeError ("Type %s not serializable" % type(obj))
 
 def main():
-    if(len(sys.argv) != 2):
-        print("Arguments must be in format: python3 main.py HOMEPAGE")
-        return
-
-    PROJECT_NAME = sys.argv[1]
-
     now = datetime.datetime.now()
 
     # read data from this directory
@@ -46,7 +40,7 @@ def main():
     export_files_length = len([name for name in os.listdir(READ_DIR) if os.path.isfile(os.path.join(READ_DIR, name))])
 
     for filename in os.listdir(READ_DIR):
-        #print("Processing file: " + str(filename))
+        print("Processing file: " + str(filename))
 
         with open(READ_DIR + filename) as fp:
             data = {}
@@ -70,12 +64,17 @@ def main():
 
             # all sites share this
             url = soup.findAll("link", {"rel": "canonical"})
+
+            # if no canonical url found, skip the iteration
+            if(len(url) == 0):
+                continue
+
             url = url[0]['href']
 
             # get the product name
             name = soup.h1.text
 
-            print("Process product " + name)
+            # print("Process product " + name)
 
             # get meaningful url: dien thoai nokia 105 dual sim 2017 hang chinh hang
             # convert - to ''
@@ -90,7 +89,7 @@ def main():
             # delete all char after that index
             meaningful_url = meaningful_url[:indexLastSpace]
 
-            if('tiki' in PROJECT_NAME):
+            if('tiki' in filename):
                 # get the category that tiki define
                 category_temp = soup.findAll("ul", {"class": "breadcrumb"})
                 category = ''
@@ -124,9 +123,22 @@ def main():
                 # get the product description that tiki define
                 description = product_description_1 + "\n" + product_description_2
 
-                # get the origin and true price that tiki define
-                true_price = soup.findAll("span", {"id": "span-price"})[0].text
-                origin_price = soup.findAll("span", {"id": "span-list-price"})[0].text
+                # get the origin and true price that adayroi define
+                origin_price = soup.findAll("span", {"id": "span-list-price"})
+
+                if(len(origin_price) != 0):
+                    origin_price = origin_price[0].text
+                else:
+                    # out of order, must be string because the db is currently store as string
+                    origin_price = "0"
+
+                true_price = soup.findAll("span", {"id": "span-price"})
+
+                # if there is discount by vinid
+                if(len(true_price) != 0):
+                    true_price = true_price[0].text
+                else:
+                    true_price = origin_price
 
             else:
                 # get the category that adayroi define

@@ -55,12 +55,12 @@ def main():
 
     with open(READ_DIR + "queue.txt") as fp:
         for url in fp:
-            soup = BeautifulSoup(urlopen(url),"lxml")
-
-            url = preprocessing_url(url)
-
             print("Processing file " + str(url))
 
+            soup = BeautifulSoup(urlopen(url))
+
+            url = preprocessing_url(url)
+            
             # if the url ending with .html (ex: tiki.vn)
             if '.html' in url and '/' not in url:
                 # the example result:
