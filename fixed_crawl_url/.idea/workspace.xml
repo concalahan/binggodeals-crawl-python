@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a13f1a20-8cbe-4513-a71e-e20e06f292f5" name="Default Changelist" comment="" />
+    <list default="true" id="a13f1a20-8cbe-4513-a71e-e20e06f292f5" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/list_definition.py" beforeDir="false" afterPath="$PROJECT_DIR$/list_definition.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/matching_products.py" beforeDir="false" afterPath="$PROJECT_DIR$/matching_products.py" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -31,13 +35,13 @@
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="dummy" value="10" />
-          <entry key="py" value="2284" />
+          <entry key="py" value="3863" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="PLAIN_TEXT" value="10" />
-          <entry key="Python" value="2284" />
+          <entry key="Python" value="3863" />
         </counts>
       </usages-collector>
     </session>
@@ -47,8 +51,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/general.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="204">
-              <caret line="45" column="6" selection-start-line="45" selection-start-column="6" selection-end-line="45" selection-end-column="6" />
+            <state relative-caret-position="-852">
+              <caret line="5" column="22" selection-start-line="5" selection-start-column="4" selection-end-line="5" selection-end-column="22" />
               <folding>
                 <element signature="e#0#9#0" expanded="true" />
                 <marker date="1537066161489" expanded="true" signature="935:1203" ph="..." />
@@ -60,11 +64,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/link_finder.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1938">
-              <caret selection-end-column="29" />
-              <folding>
-                <element signature="e#1#30#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="17">
+              <caret line="1" selection-start-line="1" selection-end-line="1" selection-end-column="34" />
             </state>
           </provider>
         </entry>
@@ -72,7 +73,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/spider.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-87">
+            <state relative-caret-position="15">
               <caret line="14" column="13" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
               <folding>
                 <element signature="e#1#35#0" expanded="true" />
@@ -85,35 +86,37 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/matching_products.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="136">
-              <caret line="8" lean-forward="true" selection-start-line="8" selection-end-line="8" />
+            <state relative-caret-position="51">
+              <caret line="28" column="23" lean-forward="true" selection-start-line="28" selection-start-column="23" selection-end-line="28" selection-end-column="23" />
               <folding>
                 <element signature="e#0#38#0" expanded="true" />
-                <marker date="1537066197325" expanded="true" signature="95:96" ph="..." />
-                <marker date="1537066197325" expanded="true" signature="95:101" ph="..." />
-                <marker date="1537066197325" expanded="true" signature="133:139" ph="..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/list_definition.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="270">
-              <caret line="34" column="39" selection-start-line="34" selection-start-column="39" selection-end-line="34" selection-end-column="39" />
-              <folding>
-                <marker date="1537066288469" expanded="true" signature="1281:1358" ph="..." />
+                <marker date="1537082837176" expanded="true" signature="151:152" ph="..." />
+                <marker date="1537082837176" expanded="true" signature="151:157" ph="..." />
+                <marker date="1537082837176" expanded="true" signature="277:284" ph="..." />
+                <marker date="1537082837176" expanded="true" signature="672:1008" ph="..." />
+                <marker date="1537082837176" expanded="true" signature="1027:1036" ph="..." />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/list_definition.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-85">
+              <caret line="9" column="94" lean-forward="true" selection-start-line="9" selection-start-column="94" selection-end-line="9" selection-end-column="94" />
+              <folding>
+                <marker date="1537066565137" expanded="true" signature="1013:1090" ph="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/main.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="136">
-              <caret line="8" selection-start-line="8" selection-end-line="8" />
+            <state relative-caret-position="187">
+              <caret line="11" column="56" selection-start-line="11" selection-start-column="56" selection-end-line="11" selection-end-column="56" />
               <folding>
                 <element signature="e#0#25#0" expanded="true" />
               </folding>
@@ -140,9 +143,9 @@
         <option value="$PROJECT_DIR$/link_finder.py" />
         <option value="$PROJECT_DIR$/spider.py" />
         <option value="$PROJECT_DIR$/general.py" />
+        <option value="$PROJECT_DIR$/list_definition.py" />
         <option value="$PROJECT_DIR$/matching_products.py" />
         <option value="$PROJECT_DIR$/main.py" />
-        <option value="$PROJECT_DIR$/list_definition.py" />
       </list>
     </option>
   </component>
@@ -260,17 +263,25 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/link_finder.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1938">
-          <caret selection-end-column="29" />
+        <state relative-caret-position="17">
+          <caret line="1" selection-start-line="1" selection-end-line="1" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/general.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-852">
+          <caret line="5" column="22" selection-start-line="5" selection-start-column="4" selection-end-line="5" selection-end-column="22" />
           <folding>
-            <element signature="e#1#30#0" expanded="true" />
+            <element signature="e#0#9#0" expanded="true" />
+            <marker date="1537066161489" expanded="true" signature="935:1203" ph="..." />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/spider.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-87">
+        <state relative-caret-position="15">
           <caret line="14" column="13" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
           <folding>
             <element signature="e#1#35#0" expanded="true" />
@@ -279,46 +290,37 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/general.py">
+    <entry file="file://$PROJECT_DIR$/list_definition.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="45" column="6" selection-start-line="45" selection-start-column="6" selection-end-line="45" selection-end-column="6" />
+        <state relative-caret-position="-85">
+          <caret line="9" column="94" lean-forward="true" selection-start-line="9" selection-start-column="94" selection-end-line="9" selection-end-column="94" />
           <folding>
-            <element signature="e#0#9#0" expanded="true" />
-            <marker date="1537066161489" expanded="true" signature="935:1203" ph="..." />
+            <marker date="1537066565137" expanded="true" signature="1013:1090" ph="..." />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/matching_products.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" lean-forward="true" selection-start-line="8" selection-end-line="8" />
+        <state relative-caret-position="51">
+          <caret line="28" column="23" lean-forward="true" selection-start-line="28" selection-start-column="23" selection-end-line="28" selection-end-column="23" />
           <folding>
             <element signature="e#0#38#0" expanded="true" />
-            <marker date="1537066197325" expanded="true" signature="95:96" ph="..." />
-            <marker date="1537066197325" expanded="true" signature="95:101" ph="..." />
-            <marker date="1537066197325" expanded="true" signature="133:139" ph="..." />
+            <marker date="1537082837176" expanded="true" signature="151:152" ph="..." />
+            <marker date="1537082837176" expanded="true" signature="151:157" ph="..." />
+            <marker date="1537082837176" expanded="true" signature="277:284" ph="..." />
+            <marker date="1537082837176" expanded="true" signature="672:1008" ph="..." />
+            <marker date="1537082837176" expanded="true" signature="1027:1036" ph="..." />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/main.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" selection-start-line="8" selection-end-line="8" />
+        <state relative-caret-position="187">
+          <caret line="11" column="56" selection-start-line="11" selection-start-column="56" selection-end-line="11" selection-end-column="56" />
           <folding>
             <element signature="e#0#25#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/list_definition.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="34" column="39" selection-start-line="34" selection-start-column="39" selection-end-line="34" selection-end-column="39" />
-          <folding>
-            <marker date="1537066288469" expanded="true" signature="1281:1358" ph="..." />
           </folding>
         </state>
       </provider>

@@ -21,13 +21,6 @@ SONY_PHONE = ["sony xperia l1", "sony xperia xz1", "sony xperia xa1", "sony xper
 XIAOMI_PHONE = ["xiaomi mi max 3", "xiaomi mi max 2", "xiaomi mi 8", "xiaomi redmi note 5", "xiaomi mi 6x", "xiaomi mi a2"
                 "xiaomi mi mix 2s"]
 
-# def create_list_phone_comparison(project_name):
-#     for brand in BRAND_LIST:
-#         brand_phone = brand.upper() + '_PHONE'
-#         path = project_name + '/' + brand + '/phones_list.txt'
-#         print(path + ' is created ...')
-#         write_file(path,'')
-
 def write_phone_to_list(project_name):
     for brand in BRAND_LIST:
         brand_phone = brand.upper() + '_PHONE'
@@ -35,4 +28,5 @@ def write_phone_to_list(project_name):
         print(path + ' is created ...')
         for phone in eval("%s " % brand_phone):
             append_to_file(path,phone)
+
 
