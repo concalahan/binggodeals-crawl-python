@@ -41,7 +41,11 @@ class LinkFinder():
 
         for url in brand_urls:
             max_num_page = 1
-            soup = BeautifulSoup(urlopen(url), "lxml")
+            try:
+                soup = BeautifulSoup(urlopen(url), "lxml")
+            except Exception:
+                print('Exception : ' + str(Exception))
+                pass
             division = soup.find("div", {"class": "list-pager"})
             print('Get numpage ' + url)
             if division is None:
@@ -62,7 +66,11 @@ class LinkFinder():
             for page in range(1, num_pages + 1):
                 url_with_pages = url + '&page=' + str(page)
                 print('... Crawling ' + url_with_pages)
-                soup = BeautifulSoup(urlopen(url_with_pages), "lxml")
+                try:
+                    soup = BeautifulSoup(urlopen(url_with_pages), "lxml")
+                except Exception:
+                    print('Exception : ' + str(Exception))
+                    pass
                 division = soup.find("div", {"class": "product-box-list",
                                              "data-impress-list-title": "Category | Điện Thoại - Máy Tính Bảng"})
                 anchors = division.find_all('a')
@@ -82,7 +90,11 @@ class LinkFinder():
         brand_urls = list()
 
         url = 'https://www.adayroi.com/dien-thoai-di-dong-c323'
-        soup = BeautifulSoup(urlopen(url), "lxml")
+        try:
+            soup = BeautifulSoup(urlopen(url), "lxml")
+        except Exception:
+            print('Exception : ' + str(Exception))
+            pass
         ul_category = soup.find("ul", {"data-role": "listview", "class": "category-menu child-level-3"})
         phones_anchors = ul_category.find_all('a')
 
@@ -95,7 +107,11 @@ class LinkFinder():
         url_and_numpage = dict()
         for url in brand_urls:
             max_num_pages = 0
-            soup = BeautifulSoup(urlopen(url), "lxml")
+            try:
+                soup = BeautifulSoup(urlopen(url), "lxml")
+            except Exception:
+                print('Exception : ' + str(Exception))
+                pass
             nav = soup.find("nav", {"class": "Page navigation"})
             print('Get numpage ' + url)
             if nav is None:
@@ -114,7 +130,11 @@ class LinkFinder():
             for page in range(0, num_pages + 1):
                 url_with_page = url + '?q=%3Arelevance&page=' + str(page)
                 print('... Crawling ' + url_with_page)
-                soup = BeautifulSoup(urlopen(url_with_page), "lxml")
+                try:
+                    soup = BeautifulSoup(urlopen(url_with_page), "lxml")
+                except Exception:
+                    print('Exception : ' + str(Exception))
+                    pass
                 division = soup.find("div", {"class": "product-list__container"})
                 anchors = division.find_all('a')
                 for anchor in anchors:
