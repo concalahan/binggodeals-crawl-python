@@ -23,8 +23,6 @@ class Spider:
             path = Spider.project_name + '/' + brand
             create_data_files(path, site_name)
 
-
-
     @staticmethod
     def gather_links(site_name):
         Finder = LinkFinder()
@@ -34,3 +32,7 @@ class Spider:
             Finder.getProductUrlAdayroi()
         links = Finder.page_links()
         append_urls_to_file(Spider.project_name, site_name, links, BRAND_LIST)
+        # Create a exporting all urls text file
+        path = Spider.project_name + '/all_urls.txt'
+        for brand, url in links.items():
+            append_to_file(path, url)

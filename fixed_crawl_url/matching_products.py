@@ -37,9 +37,14 @@ class matchingProduct():
 
             for url in url_list:
                 print(url + " is checking ...")
-                if self.site_name == 'adayroi':
-                    soup = BeautifulSoup(urlopen(url), "lxml")
+                if self.site_name == 'tiki':
+                    try:
+                        soup = BeautifulSoup(urlopen(url), "lxml")
+                    except Exception:
+                        print('Exception : ' + str(Exception))
+                        pass
                     h1_title = soup.find("h1")
+
                     if h1_title is None: continue
                     title = h1_title.get_text()
                     title = title.lower()

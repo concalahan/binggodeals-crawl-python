@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 https://tiki.vn/dien-thoai-samsung-galaxy-j8-64gb-4gb-ban-dac-biet-hang-chinh-hang-p3452669.html?src=category-page
 https://tiki.vn/dien-thoai-samsung-galaxy-note-8-hang-chinh-hang-p832108.html?src=category-page
 https://tiki.vn/dien-thoai-samsung-galaxy-j2-prime-hang-chinh-hang-p301758.html?src=category-page
@@ -63,3 +64,5 @@ https://tiki.vn/dien-thoai-samsung-galaxy-s7-edge-hang-chinh-hang-da-kich-hoat-b
 https://tiki.vn/dien-thoai-samsung-galaxy-s8-hang-chinh-hang-da-kich-hoat-bao-hanh-12-thang-p1694195.html?src=category-page
 https://tiki.vn/dien-thoai-samsung-galaxy-j2-pro-2018-hang-chinh-hang-p1283695.html?src=category-page
 https://tiki.vn/dien-thoai-samsung-e1200-hang-chinh-hang-p3729945.html?src=category-page
+=======
+>>>>>>> f8d43e8d341cc23818caafa0eeaf224a6d6856ef

@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 https://tiki.vn/dien-thoai-iphone-6-32gb-vn-a-vang-dong-hang-chinh-hang-p684632.html?src=category-page
 https://tiki.vn/dien-thoai-iphone-x-64gb-vn-a-hang-chinh-hang-p938786.html?src=category-page
 https://tiki.vn/ipad-wifi-32gb-new-2018-hang-chinh-hang-p1929161.html?src=category-page
@@ -112,3 +113,5 @@ https://tiki.vn/dien-thoai-iphone-7-plus-128gb-hang-nhap-khau-p722986.html?src=c
 https://tiki.vn/ipad-pro-10-5-inch-256gb-wifi-hang-chinh-hang-p694338.html?src=category-page
 https://tiki.vn/dien-thoai-iphone-8-64gb-do-nhap-khau-chinh-hang-p1826487.html?src=category-page
 https://tiki.vn/ipad-pro-12-9-inch-wifi-cellular-256gb-hang-chinh-hang-p2611865.html?src=category-page
+=======
+>>>>>>> f8d43e8d341cc23818caafa0eeaf224a6d6856ef

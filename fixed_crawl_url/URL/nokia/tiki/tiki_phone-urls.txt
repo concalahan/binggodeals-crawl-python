@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 https://tiki.vn/dien-thoai-nokia-6-1-plus-hang-chinh-hang-p3873909.html?src=category-page
 https://tiki.vn/dien-thoai-nokia-105-dual-sim-2017-hang-chinh-hang-p810446.html?src=category-page
 https://tiki.vn/bo-dien-thoai-nokia-x5-32gb-3gb-xanh-dan-cuong-luc-5d-full-man-den-op-lung-hang-nhap-khau-p3837695.html?src=category-page
@@ -77,3 +78,5 @@ https://tiki.vn/bo-dien-thoai-nokia-x5-64gb-4gb-xanh-dan-cuong-luc-5d-full-man-d
 https://tiki.vn/dien-thoai-nokia-150-dual-sim-hang-chinh-hang-p588375.html?src=category-page
 https://tiki.vn/dien-thoai-nokia-2-1-hang-chinh-hang-p4032889.html?src=category-page
 https://tiki.vn/nokia-230-dual-sim-p177294.html?src=category-page
+=======
+>>>>>>> f8d43e8d341cc23818caafa0eeaf224a6d6856ef

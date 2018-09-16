@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 https://tiki.vn/dien-thoai-xiaomi-mi-max-3-64gb-4gb-hang-chinh-hang-p3599719.html?src=category-page
 https://tiki.vn/dien-thoai-xiaomi-mi-mix-2-black-hang-chinh-hang-p848363.html?src=category-page
 https://tiki.vn/dien-thoai-xiaomi-mi-8-128gb-6gb-hang-chinh-hang-p2408753.html?src=category-page
@@ -142,3 +143,5 @@ https://tiki.vn/dien-thoai-xiaomi-mi-a2-32gb-4gb-hang-chinh-hang-p3676195.html?s
 https://tiki.vn/dien-thoai-xiaomi-mi-max-2-64gb-4gb-vang-hang-nhap-khau-p731721.html?src=category-page
 https://tiki.vn/dien-thoai-xiaomi-mi-a2-lite-3gb-32gb-p3890251.html?src=category-page
 https://tiki.vn/dien-thoai-xiaomi-mi-8-se-64gb-4gb-hang-nhap-khau-p3807323.html?src=category-page
+=======
+>>>>>>> f8d43e8d341cc23818caafa0eeaf224a6d6856ef
