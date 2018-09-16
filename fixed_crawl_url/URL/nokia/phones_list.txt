@@ -5,3 +5,17 @@ nokia x6
 nokia 1
 nokia 2
 nokia 3
+nokia 216
+nokia 6
+nokia x5
+nokia x6
+nokia 1
+nokia 2
+nokia 3
+nokia 216
+nokia 6
+nokia x5
+nokia x6
+nokia 1
+nokia 2
+nokia 3

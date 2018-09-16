@@ -5,10 +5,10 @@ from matching_products import matchingProduct
 
 def main():
     PROJECT_NAME = "URL"
-    # tikiSpider = Spider(PROJECT_NAME, "tiki")
-    # adayroiSpider = Spider(PROJECT_NAME, "adayroi")
+    tikiSpider = Spider(PROJECT_NAME, "tiki")
+    adayroiSpider = Spider(PROJECT_NAME, "adayroi")
 
-    # write_phone_to_list(PROJECT_NAME)
+    write_phone_to_list(PROJECT_NAME)
     tikiMatching = matchingProduct(PROJECT_NAME,'adayroi')
     tikiMatching.matching()
 
