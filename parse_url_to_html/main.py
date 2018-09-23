@@ -36,14 +36,8 @@ def preprocessing_url(url):
     return url
 
 def main():
-    if(len(sys.argv) != 2):
-        print("Arguments must be in format: python3 main.py HOMEPAGE")
-        return
-
-    PROJECT_NAME = sys.argv[1]
-
     # read from another project
-    READ_DIR = '../crawl_url/' + PROJECT_NAME + '/'
+    READ_DIR = '../fixed_crawl_url/URL/'
 
     now = datetime.datetime.now()
 
@@ -53,7 +47,7 @@ def main():
     # create the directory if not empty
     create_project_dir(WRITE_DIR)
 
-    with open(READ_DIR + "queue.txt") as fp:
+    with open(READ_DIR + "all_urls.txt") as fp:
         for url in fp:
             print("Processing file " + str(url))
 
