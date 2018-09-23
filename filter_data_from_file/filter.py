@@ -59,11 +59,8 @@ class Filter:
                 elif 'adayroi' in filename:
                     data = parser.parseProductFromAdayroi(filename, fp)
 
-                if '.html' in filename and '/' not in filename:
-                    # write that object to json
-                    with open(Filter.WRITE_DIR + filename + '.json', 'w') as outfile:
-                        json.dump(data, outfile)
-                elif '/' not in filename:
-                    with open(Filter.WRITE_DIR + filename + '.json', 'w') as outfile:
-                        json.dump(data, outfile)
+                # delete .html and write file
+                with open(Filter.WRITE_DIR + filename[:-5] + '.json', 'w') as outfile:
+                    json.dump(data, outfile)
+                    
 
