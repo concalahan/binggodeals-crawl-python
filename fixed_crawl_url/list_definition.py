@@ -21,7 +21,7 @@ SONY_PHONE = ["sony xperia l1", "sony xperia xz1", "sony xperia xa1", "sony xper
 XIAOMI_PHONE = ["xiaomi mi max 3", "xiaomi mi max 2", "xiaomi mi 8", "xiaomi redmi note 5", "xiaomi mi 6x", "xiaomi mi a2"
                 "xiaomi mi mix 2s"]
 
-def write_phone_to_list(project_name):
+def create_compare_list_of_phones(project_name):
     for brand in BRAND_LIST:
         brand_phone = brand.upper() + '_PHONE'
         path = project_name + '/' + brand + '/phones_list.txt'

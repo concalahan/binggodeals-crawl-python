@@ -31,17 +31,21 @@ def create_data_files(project_name, site_name):
 
 def append_urls_to_file(project_name, site_name, links, brand_list):
     for brand_dir in brand_list:
+        path = project_name + '/' + brand_dir + '/' + site_name + '/' + site_name + '_phone-urls.txt'
         for brand, url in links.items():
             if brand[0] == brand_dir:
-                path = project_name + '/' + brand_dir + '/' + site_name + '/' + site_name + '_phone-urls.txt'
                 append_to_file(path, url)
+        # Make list of urls in file become to a set and then return to file
 
+        urls = file_to_set(path)
+        set_to_file(urls, path)
 
 
 def write_file(path, data):
     f = open(path, 'w+')
     f.write(data)
     f.close()
+
 
 def append_to_file(path, data):
     if not os.path.isfile(path):

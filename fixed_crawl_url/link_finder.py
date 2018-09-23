@@ -1,6 +1,8 @@
 from bs4 import BeautifulSoup
 from urllib.request import urlopen
 from list_definition import BRAND_LIST
+import time
+import urllib
 
 
 class LinkFinder():
@@ -75,15 +77,19 @@ class LinkFinder():
                                              "data-impress-list-title": "Category | Điện Thoại - Máy Tính Bảng"})
                 anchors = division.find_all('a')
                 for anchor in anchors:
-                    self.links[self.list_brand[brand_counts], link_counts] = anchor.get('href')
+                    href = anchor.get('href')
+                    if '?' in href:
+                        href = href.split('?')[:-1][0]
+                    self.links[self.list_brand[brand_counts], link_counts] = href
                     self.total_links += 1
                     link_counts += 1
             brand_counts += 1
 
-        print("Stop crawling product URLs in Tiki.vn!")
+        print("""---------------------------------
+                Stop crawling product URLs in tiki.vn!
+                ---------------------------------""")
 
     def getProductUrlAdayroi(self):
-
         brand_counts = 0;
         list_phones_in_web = ["iphone", "samsung", "oppo", "nokia", "asus", "sony", "xiaomi"]
         list_tablets_in_web = ["apple", "samsung", "xiaomi"]
@@ -139,12 +145,84 @@ class LinkFinder():
                 anchors = division.find_all('a')
                 for anchor in anchors:
                     href = 'https://adayroi.com' + anchor.get('href')
+                    if '?' in href:
+                        href = href.split('?')[:-1][0]
                     self.links[self.list_brand[brand_counts], link_counts] = href
                     self.total_links += 1
                     link_counts += 1
             brand_counts += 1
 
-        print("Stop crawling product URLs in Adayroi.com!")
+        print("""---------------------------------
+        Stop crawling product URLs in Adayroi.com!
+        ---------------------------------""")
+
+    def getProductUrlCellPhoneS(self):
+        brand_counts = 0;
+        brand_urls = list()
+        url_and_numpage = dict()
+
+        for brand in self.list_brand:
+            url = 'https://cellphones.com.vn/mobile/' + brand + '.html'
+            brand_urls.append(url)
+
+        # Create a Header to help the beautifulSoup can crawl the web page
+        headers = {'User-Agent': 'User-Agent:Mozilla/5.0'}
+
+        for url in brand_urls:
+            max_num_page = 1
+
+            data1 = urllib.request.Request(url, headers=headers)
+            data = urllib.request.urlopen(data1).read()
+            try:
+                soup = BeautifulSoup(data, "lxml")
+            except Exception:
+                print('Exception : ' + str(Exception))
+
+            division = soup.find("div", {"class": "pages"})
+            print('Get numpage ' + url)
+            if division is None:
+                url_and_numpage.update({url: max_num_page})
+            else:
+                anchors = division.find_all('a')
+                for anchor in anchors:
+                    if "javascript" in anchor.get('href') :
+                        continue
+                    if int(anchor.get('href')[-1]) > max_num_page:
+                        max_num_page = int(anchor.get('href')[-1])
+                url_and_numpage.update({url: max_num_page})
+
+        # =============================================================================
+        #         Pass all URLs of phones and tablet in Tiki.vn into .txt file
+        # =============================================================================
+
+        for url, num_pages in url_and_numpage.items():
+            link_counts = 0;
+            for page in range(1, num_pages + 1):
+                url_with_pages = url + '?p=' + str(page)
+                print('... Crawling ' + url_with_pages)
+
+                data1 = urllib.request.Request(url_with_pages, headers=headers)
+                data = urllib.request.urlopen(data1).read()
+
+                try:
+                    soup = BeautifulSoup(data, "lxml")
+                except Exception:
+                    print('Exception : ' + str(Exception))
+                    pass
+                division = soup.find("div", {"class": "products-container"})
+                anchors = division.find_all('a')
+                for anchor in anchors:
+                    href = anchor.get('href')
+                    if '?' in href:
+                        href = href.split('?')[:-1][0]
+                    self.links[self.list_brand[brand_counts], link_counts] = href
+                    self.total_links += 1
+                    link_counts += 1
+            brand_counts += 1
+
+        print("""---------------------------------
+                Stop crawling product URLs in Cellphones.com!
+                ---------------------------------""")
 
     def page_links(self):
         return self.links
