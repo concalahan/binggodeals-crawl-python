@@ -22,3 +22,12 @@ oppo f7
 oppo f9
 oppo f3 plus
 oppo a71
+<<<<<<< HEAD
+=======
+oppo a3s
+oppo f1s
+oppo f7
+oppo f9
+oppo f3 plus
+oppo a71
+>>>>>>> a661efb92a31c553bec25b0898569be5103036e8

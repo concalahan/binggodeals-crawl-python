@@ -50,3 +50,19 @@ galaxy j7
 galaxy j8
 galaxy a6
 galaxy a8
+<<<<<<< HEAD
+=======
+galaxy note 9
+galaxy s9
+galaxy note 8
+galaxy s8
+galaxy s7
+galaxy j2
+galaxy j3
+galaxy j4
+galaxy j6
+galaxy j7
+galaxy j8
+galaxy a6
+galaxy a8
+>>>>>>> a661efb92a31c553bec25b0898569be5103036e8

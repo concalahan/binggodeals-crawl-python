@@ -4,7 +4,7 @@ from influxdb import InfluxDBClient
 # https://influxdb-python.readthedocs.io/en/latest/api-documentation.html#influxdbclient
 # https://influxdb-python.readthedocs.io/en/latest/examples.html
 
-client = InfluxDBClient(host='127.0.0.1', port=8086, database='mydb')
+client = InfluxDBClient(host='103.216.112.226', port=8086, database='mydb')
 dbs = client.get_list_database()
 print("The database name is: " + str(dbs))
 

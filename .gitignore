@@ -1,4 +1,6 @@
 adayroi
 data
 *.pyc
-.vscode
+*.vscode
+fixed_crawl_url/.idea
+fixed_crawl_url/URL
