@@ -4,30 +4,3 @@ xiaomi mi 8
 xiaomi redmi note 5
 xiaomi mi 6x
 xiaomi mi a2xiaomi mi mix 2s
-xiaomi mi max 3
-xiaomi mi max 2
-xiaomi mi 8
-xiaomi redmi note 5
-xiaomi mi 6x
-xiaomi mi a2xiaomi mi mix 2s
-xiaomi mi max 3
-xiaomi mi max 2
-xiaomi mi 8
-xiaomi redmi note 5
-xiaomi mi 6x
-xiaomi mi a2xiaomi mi mix 2s
-xiaomi mi max 3
-xiaomi mi max 2
-xiaomi mi 8
-xiaomi redmi note 5
-xiaomi mi 6x
-xiaomi mi a2xiaomi mi mix 2s
-<<<<<<< HEAD
-=======
-xiaomi mi max 3
-xiaomi mi max 2
-xiaomi mi 8
-xiaomi redmi note 5
-xiaomi mi 6x
-xiaomi mi a2xiaomi mi mix 2s
->>>>>>> a661efb92a31c553bec25b0898569be5103036e8

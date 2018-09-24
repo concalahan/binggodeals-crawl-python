@@ -1,18 +1,3 @@
 asus zenfone max pro m1
 asus zenfone max plus m1
 asus zenfone 4 max
-asus zenfone max pro m1
-asus zenfone max plus m1
-asus zenfone 4 max
-asus zenfone max pro m1
-asus zenfone max plus m1
-asus zenfone 4 max
-asus zenfone max pro m1
-asus zenfone max plus m1
-asus zenfone 4 max
-<<<<<<< HEAD
-=======
-asus zenfone max pro m1
-asus zenfone max plus m1
-asus zenfone 4 max
->>>>>>> a661efb92a31c553bec25b0898569be5103036e8

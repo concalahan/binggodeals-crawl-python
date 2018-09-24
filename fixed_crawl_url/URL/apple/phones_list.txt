@@ -2,22 +2,3 @@ iphone 6
 iphone 7
 iphone 8
 iphone X
-iphone 6
-iphone 7
-iphone 8
-iphone X
-iphone 6
-iphone 7
-iphone 8
-iphone X
-iphone 6
-iphone 7
-iphone 8
-iphone X
-<<<<<<< HEAD
-=======
-iphone 6
-iphone 7
-iphone 8
-iphone X
->>>>>>> a661efb92a31c553bec25b0898569be5103036e8

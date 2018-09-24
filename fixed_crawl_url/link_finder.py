@@ -1,7 +1,6 @@
 from bs4 import BeautifulSoup
 from urllib.request import urlopen
 from list_definition import BRAND_LIST
-import time
 import urllib
 
 
