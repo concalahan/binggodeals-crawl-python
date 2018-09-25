@@ -3,27 +3,33 @@
   <component name="ChangeListManager">
     <list default="true" id="a13f1a20-8cbe-4513-a71e-e20e06f292f5" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/URL/apple/matched_products/iphone_6.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/URL/apple/matched_products/iphone_7.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/URL/apple/matched_products/iphone_8.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/URL/apple/phones_list.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/URL/all_urls.txt" beforeDir="false" afterPath="$PROJECT_DIR$/URL/all_urls.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/URL/apple/cellphones/cellphones_phone-urls.txt" beforeDir="false" afterPath="$PROJECT_DIR$/URL/apple/cellphones/cellphones_phone-urls.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/URL/apple/matched_products/iphone_6.txt" beforeDir="false" afterPath="$PROJECT_DIR$/URL/apple/matched_products/iphone_6.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/URL/apple/matched_products/iphone_7.txt" beforeDir="false" afterPath="$PROJECT_DIR$/URL/apple/matched_products/iphone_7.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/URL/apple/matched_products/iphone_8.txt" beforeDir="false" afterPath="$PROJECT_DIR$/URL/apple/matched_products/iphone_8.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/URL/apple/phones_list.txt" beforeDir="false" afterPath="$PROJECT_DIR$/URL/apple/phones_list.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/URL/apple/tiki/tiki_phone-urls.txt" beforeDir="false" afterPath="$PROJECT_DIR$/URL/apple/tiki/tiki_phone-urls.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/URL/asus/phones_list.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/URL/asus/cellphones/cellphones_phone-urls.txt" beforeDir="false" afterPath="$PROJECT_DIR$/URL/asus/cellphones/cellphones_phone-urls.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/URL/asus/phones_list.txt" beforeDir="false" afterPath="$PROJECT_DIR$/URL/asus/phones_list.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/URL/asus/tiki/tiki_phone-urls.txt" beforeDir="false" afterPath="$PROJECT_DIR$/URL/asus/tiki/tiki_phone-urls.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/URL/nokia/phones_list.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/URL/nokia/cellphones/cellphones_phone-urls.txt" beforeDir="false" afterPath="$PROJECT_DIR$/URL/nokia/cellphones/cellphones_phone-urls.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/URL/nokia/phones_list.txt" beforeDir="false" afterPath="$PROJECT_DIR$/URL/nokia/phones_list.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/URL/nokia/tiki/tiki_phone-urls.txt" beforeDir="false" afterPath="$PROJECT_DIR$/URL/nokia/tiki/tiki_phone-urls.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/URL/oppo/phones_list.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/URL/oppo/cellphones/cellphones_phone-urls.txt" beforeDir="false" afterPath="$PROJECT_DIR$/URL/oppo/cellphones/cellphones_phone-urls.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/URL/oppo/phones_list.txt" beforeDir="false" afterPath="$PROJECT_DIR$/URL/oppo/phones_list.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/URL/oppo/tiki/tiki_phone-urls.txt" beforeDir="false" afterPath="$PROJECT_DIR$/URL/oppo/tiki/tiki_phone-urls.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/URL/samsung/phones_list.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/URL/samsung/cellphones/cellphones_phone-urls.txt" beforeDir="false" afterPath="$PROJECT_DIR$/URL/samsung/cellphones/cellphones_phone-urls.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/URL/samsung/phones_list.txt" beforeDir="false" afterPath="$PROJECT_DIR$/URL/samsung/phones_list.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/URL/samsung/tiki/tiki_phone-urls.txt" beforeDir="false" afterPath="$PROJECT_DIR$/URL/samsung/tiki/tiki_phone-urls.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/URL/sony/phones_list.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/URL/sony/cellphones/cellphones_phone-urls.txt" beforeDir="false" afterPath="$PROJECT_DIR$/URL/sony/cellphones/cellphones_phone-urls.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/URL/sony/phones_list.txt" beforeDir="false" afterPath="$PROJECT_DIR$/URL/sony/phones_list.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/URL/sony/tiki/tiki_phone-urls.txt" beforeDir="false" afterPath="$PROJECT_DIR$/URL/sony/tiki/tiki_phone-urls.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/URL/xiaomi/phones_list.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/URL/xiaomi/phones_list.txt" beforeDir="false" afterPath="$PROJECT_DIR$/URL/xiaomi/phones_list.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/URL/xiaomi/tiki/tiki_phone-urls.txt" beforeDir="false" afterPath="$PROJECT_DIR$/URL/xiaomi/tiki/tiki_phone-urls.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/link_finder.py" beforeDir="false" afterPath="$PROJECT_DIR$/link_finder.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/matching_products.py" beforeDir="false" afterPath="$PROJECT_DIR$/matching_products.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spider.py" beforeDir="false" afterPath="$PROJECT_DIR$/spider.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -35,46 +41,53 @@
     <session id="-1084701983">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
+          <entry key="project.closed" value="2" />
           <entry key="project.open.time.0" value="1" />
-          <entry key="project.opened" value="1" />
+          <entry key="project.open.time.19" value="1" />
+          <entry key="project.open.time.20" value="2" />
+          <entry key="project.opened" value="4" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="py" value="7" />
+          <entry key="g4" value="2" />
+          <entry key="py" value="9" />
           <entry key="txt" value="3" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
+          <entry key="ANTLR v4 grammar file" value="2" />
           <entry key="PLAIN_TEXT" value="3" />
-          <entry key="Python" value="7" />
+          <entry key="Python" value="9" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="dummy" value="10" />
-          <entry key="py" value="4221" />
+          <entry key="g4" value="1" />
+          <entry key="py" value="5509" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
+          <entry key="ANTLR v4 grammar file" value="1" />
           <entry key="PLAIN_TEXT" value="10" />
-          <entry key="Python" value="4221" />
+          <entry key="Python" value="5509" />
         </counts>
       </usages-collector>
     </session>
   </component>
   <component name="FileEditorManager">
-    <leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/general.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="151">
-              <caret line="33" column="8" selection-start-line="33" selection-start-column="8" selection-end-line="33" selection-end-column="40" />
+            <state relative-caret-position="176">
+              <caret line="42" selection-start-line="42" selection-end-line="42" />
               <folding>
                 <element signature="e#0#9#0" expanded="true" />
-                <marker date="1537066161489" expanded="true" signature="935:1203" ph="..." />
+                <marker date="1537722006317" expanded="true" signature="935:1336" ph="..." />
               </folding>
             </state>
           </provider>
@@ -83,10 +96,10 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/link_finder.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-951">
-              <caret line="71" column="58" selection-start-line="71" selection-start-column="58" selection-end-line="71" selection-end-column="58" />
+            <state relative-caret-position="-1360">
+              <caret line="3" selection-start-line="3" selection-end-line="3" selection-end-column="13" />
               <folding>
-                <element signature="e#1#30#0" expanded="true" />
+                <marker date="1537754665773" expanded="true" signature="7042:9839" ph="..." />
               </folding>
             </state>
           </provider>
@@ -95,28 +108,27 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/spider.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="491">
-              <caret line="31" column="41" selection-start-line="31" selection-start-column="41" selection-end-line="31" selection-end-column="41" />
+            <state relative-caret-position="59">
+              <caret line="22" column="32" selection-start-line="22" selection-start-column="32" selection-end-line="22" selection-end-column="32" />
               <folding>
-                <element signature="e#1#35#0" expanded="true" />
-                <marker date="1537087768594" expanded="true" signature="642:646" ph="..." />
+                <marker date="1537723465217" expanded="true" signature="642:646" ph="..." />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/matching_products.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="236">
-              <caret line="43" column="62" selection-start-line="43" selection-start-column="62" selection-end-line="43" selection-end-column="62" />
+            <state relative-caret-position="309">
+              <caret line="59" column="42" lean-forward="true" selection-start-line="59" selection-start-column="42" selection-end-line="59" selection-end-column="42" />
               <folding>
                 <element signature="e#0#38#0" expanded="true" />
-                <marker date="1537088923053" expanded="true" signature="151:152" ph="..." />
-                <marker date="1537088923053" expanded="true" signature="151:157" ph="..." />
-                <marker date="1537088923053" expanded="true" signature="277:284" ph="..." />
-                <marker date="1537088923053" expanded="true" signature="672:1008" ph="..." />
-                <marker date="1537088923053" expanded="true" signature="1027:1036" ph="..." />
+                <marker date="1537755783612" expanded="true" signature="166:167" ph="..." />
+                <marker date="1537755783612" expanded="true" signature="166:172" ph="..." />
+                <marker date="1537755783612" expanded="true" signature="292:370" ph="..." />
+                <marker date="1537755783612" expanded="true" signature="838:1196" ph="..." />
+                <marker date="1537755783612" expanded="true" signature="1215:1224" ph="..." />
               </folding>
             </state>
           </provider>
@@ -125,12 +137,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/list_definition.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="272">
-              <caret line="30" selection-start-line="30" selection-end-line="30" />
-              <folding>
-                <marker date="1537087131655" expanded="true" signature="1013:1090" ph="..." />
-                <marker date="1537087131655" expanded="true" signature="1280:1282" ph="..." />
-              </folding>
+            <state relative-caret-position="-187">
+              <caret line="4" column="45" selection-start-line="4" selection-start-column="45" selection-end-line="4" selection-end-column="45" />
             </state>
           </provider>
         </entry>
@@ -138,11 +146,21 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/main.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="102">
-              <caret line="6" column="23" selection-start-line="6" selection-start-column="23" selection-end-line="6" selection-end-column="23" />
+            <state relative-caret-position="119">
+              <caret line="14" column="21" selection-start-line="8" selection-start-column="6" selection-end-line="15" selection-end-column="30" />
               <folding>
                 <element signature="e#0#25#0" expanded="true" />
+                <marker date="1537779206134" expanded="true" signature="137:142" ph="..." />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/../../../PPL/Assignment_2/Assignment_2/src/main/mp/parser/MP.g4">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="153">
+              <caret line="42" selection-start-line="42" selection-end-line="42" selection-end-column="36" />
             </state>
           </provider>
         </entry>
@@ -156,6 +174,11 @@
       </list>
     </option>
   </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>HEAD is</find>
+    </findStrings>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
@@ -163,12 +186,13 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/list_of_phones.py" />
-        <option value="$PROJECT_DIR$/general.py" />
         <option value="$PROJECT_DIR$/list_definition.py" />
-        <option value="$PROJECT_DIR$/main.py" />
+        <option value="$PROJECT_DIR$/general.py" />
         <option value="$PROJECT_DIR$/spider.py" />
         <option value="$PROJECT_DIR$/link_finder.py" />
         <option value="$PROJECT_DIR$/matching_products.py" />
+        <option value="$PROJECT_DIR$/main.py" />
+        <option value="$PROJECT_DIR$/../../../PPL/Assignment_2/Assignment_2/src/main/mp/parser/MP.g4" />
       </list>
     </option>
   </component>
@@ -183,7 +207,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -195,10 +218,11 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/main.py" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../PPL/Assignment_2/Assignment_2/src/main/mp/parser/MP.g4" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RunDashboard">
@@ -264,7 +288,7 @@
       <window_info anchor="bottom" id="Tool Output" order="5" />
       <window_info anchor="bottom" id="Message" order="6" />
       <window_info anchor="bottom" id="Find" order="7" />
-      <window_info active="true" anchor="bottom" id="Run" order="8" visible="true" weight="0.3276923" />
+      <window_info active="true" anchor="bottom" id="Run" order="8" visible="true" weight="0.15692307" />
       <window_info anchor="bottom" id="Debug" order="9" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="10" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="11" weight="0.4" />
@@ -278,77 +302,83 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/URL/asus/tiki/tiki_phone-urls.txt">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/URL/apple/tiki/tiki_phone-urls.txt">
-      <provider selected="true" editor-type-id="text-editor" />
+    <entry file="file://$PROJECT_DIR$/URL/asus/tiki/tiki_phone-urls.txt" />
+    <entry file="file://$PROJECT_DIR$/URL/apple/tiki/tiki_phone-urls.txt" />
+    <entry file="file://E:/Python/WinPython/python-3.6.5.amd64/Lib/http/client.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="201">
+          <caret line="265" selection-start-line="265" selection-end-line="265" />
+        </state>
+      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/general.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="151">
-          <caret line="33" column="8" selection-start-line="33" selection-start-column="8" selection-end-line="33" selection-end-column="40" />
+        <state relative-caret-position="176">
+          <caret line="42" selection-start-line="42" selection-end-line="42" />
           <folding>
             <element signature="e#0#9#0" expanded="true" />
-            <marker date="1537066161489" expanded="true" signature="935:1203" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/list_definition.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="30" selection-start-line="30" selection-end-line="30" />
-          <folding>
-            <marker date="1537087131655" expanded="true" signature="1013:1090" ph="..." />
-            <marker date="1537087131655" expanded="true" signature="1280:1282" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/main.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="23" selection-start-line="6" selection-start-column="23" selection-end-line="6" selection-end-column="23" />
-          <folding>
-            <element signature="e#0#25#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/link_finder.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-951">
-          <caret line="71" column="58" selection-start-line="71" selection-start-column="58" selection-end-line="71" selection-end-column="58" />
-          <folding>
-            <element signature="e#1#30#0" expanded="true" />
+            <marker date="1537722006317" expanded="true" signature="935:1336" ph="..." />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/spider.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="491">
-          <caret line="31" column="41" selection-start-line="31" selection-start-column="41" selection-end-line="31" selection-end-column="41" />
+        <state relative-caret-position="59">
+          <caret line="22" column="32" selection-start-line="22" selection-start-column="32" selection-end-line="22" selection-end-column="32" />
           <folding>
-            <element signature="e#1#35#0" expanded="true" />
-            <marker date="1537087768594" expanded="true" signature="642:646" ph="..." />
+            <marker date="1537723465217" expanded="true" signature="642:646" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/list_definition.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-187">
+          <caret line="4" column="45" selection-start-line="4" selection-start-column="45" selection-end-line="4" selection-end-column="45" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/link_finder.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1360">
+          <caret line="3" selection-start-line="3" selection-end-line="3" selection-end-column="13" />
+          <folding>
+            <marker date="1537754665773" expanded="true" signature="7042:9839" ph="..." />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/matching_products.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="236">
-          <caret line="43" column="62" selection-start-line="43" selection-start-column="62" selection-end-line="43" selection-end-column="62" />
+        <state relative-caret-position="309">
+          <caret line="59" column="42" lean-forward="true" selection-start-line="59" selection-start-column="42" selection-end-line="59" selection-end-column="42" />
           <folding>
             <element signature="e#0#38#0" expanded="true" />
-            <marker date="1537088923053" expanded="true" signature="151:152" ph="..." />
-            <marker date="1537088923053" expanded="true" signature="151:157" ph="..." />
-            <marker date="1537088923053" expanded="true" signature="277:284" ph="..." />
-            <marker date="1537088923053" expanded="true" signature="672:1008" ph="..." />
-            <marker date="1537088923053" expanded="true" signature="1027:1036" ph="..." />
+            <marker date="1537755783612" expanded="true" signature="166:167" ph="..." />
+            <marker date="1537755783612" expanded="true" signature="166:172" ph="..." />
+            <marker date="1537755783612" expanded="true" signature="292:370" ph="..." />
+            <marker date="1537755783612" expanded="true" signature="838:1196" ph="..." />
+            <marker date="1537755783612" expanded="true" signature="1215:1224" ph="..." />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="14" column="21" selection-start-line="8" selection-start-column="6" selection-end-line="15" selection-end-column="30" />
+          <folding>
+            <element signature="e#0#25#0" expanded="true" />
+            <marker date="1537779206134" expanded="true" signature="137:142" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../../PPL/Assignment_2/Assignment_2/src/main/mp/parser/MP.g4">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="42" selection-start-line="42" selection-end-line="42" selection-end-column="36" />
         </state>
       </provider>
     </entry>

@@ -30,6 +30,8 @@ class Spider:
             Finder.getProductUrlTiki()
         elif site_name == 'adayroi':
             Finder.getProductUrlAdayroi()
+        elif site_name == 'cellphones':
+            Finder.getProductUrlCellPhoneS()
         links = Finder.page_links()
         append_urls_to_file(Spider.project_name, site_name, links, BRAND_LIST)
         # Create a exporting all urls text file
