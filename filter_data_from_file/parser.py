@@ -22,7 +22,7 @@ class Parser():
     def parseProductFromTiki(self, filename, fp):
         data = {}
 
-        soup = BeautifulSoup(fp, "lxml")
+        soup = BeautifulSoup(fp)
 
         # HTML2Text: for exact text from html
         h = html2text.HTML2Text()
