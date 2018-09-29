@@ -12,27 +12,18 @@ class LinkFinder():
         self.links = {}
         self.list_brand = BRAND_LIST
 
-    def getProductUrlTiki(self):
-        # =============================================================================
-        #         Code below is aim to get all URLs of each brand of phones in Tiki.vn
-        # =============================================================================
+    def page_links(self):
+        return self.links
 
-        # =============================================================================
-        #         brandUrl = set()
-        #         soup = BeautifulSoup(urlopen(base_url),"lxml")
-        #         division = soup.find("div", {"id":"collapse-brand","class":"panel-collapse collapse in","role":"tabpanel","aria-labelledby":"heading-brand"})
-        #         anchors = division.find_all('a')
-        #
-        #         for anchor in anchors:
-        #             if anchor.get('href') != 'javascript:void(0)':
-        #                 brandUrl.add('https://tiki.vn' + anchor.get('href'))
-        #
-        # =============================================================================
+    def error(self, message):
+        pass
+
+    def getProductUrlTiki(self):
 
         # =============================================================================
         #         Using brandUrl set() to get numpage of each URL
         # =============================================================================
-        brand_counts = 0;
+        brand_counts = 0
         brand_urls = list()
         url_and_numpage = dict()
 
@@ -63,7 +54,7 @@ class LinkFinder():
         # =============================================================================
 
         for url, num_pages in url_and_numpage.items():
-            link_counts = 0;
+            link_counts = 0
             for page in range(1, num_pages + 1):
                 url_with_pages = url + '&page=' + str(page)
                 print('... Crawling ' + url_with_pages)
@@ -89,7 +80,7 @@ class LinkFinder():
                 ---------------------------------""")
 
     def getProductUrlAdayroi(self):
-        brand_counts = 0;
+        brand_counts = 0
         list_phones_in_web = ["iphone", "samsung", "oppo", "nokia", "asus", "sony", "xiaomi"]
         list_tablets_in_web = ["apple", "samsung", "xiaomi"]
         brand_urls = list()
@@ -131,7 +122,7 @@ class LinkFinder():
         #         Pass all URLs of phones and tablet in Adayroi into .txt file
         # =============================================================================
         for url, num_pages in url_and_numpage.items():
-            link_counts = 0;
+            link_counts = 0
             for page in range(0, num_pages + 1):
                 url_with_page = url + '?q=%3Arelevance&page=' + str(page)
                 print('... Crawling ' + url_with_page)
@@ -156,7 +147,7 @@ class LinkFinder():
         ---------------------------------""")
 
     def getProductUrlCellPhoneS(self):
-        brand_counts = 0;
+        brand_counts = 0
         brand_urls = list()
         url_and_numpage = dict()
 
@@ -184,18 +175,18 @@ class LinkFinder():
             else:
                 anchors = division.find_all('a')
                 for anchor in anchors:
-                    if "javascript" in anchor.get('href') :
+                    if "javascript" in anchor.get('href'):
                         continue
                     if int(anchor.get('href')[-1]) > max_num_page:
                         max_num_page = int(anchor.get('href')[-1])
                 url_and_numpage.update({url: max_num_page})
 
         # =============================================================================
-        #         Pass all URLs of phones and tablet in Tiki.vn into .txt file
+        #         Pass all URLs of phones and tablet in Cellphones.com.vn into .txt file
         # =============================================================================
 
         for url, num_pages in url_and_numpage.items():
-            link_counts = 0;
+            link_counts = 0
             for page in range(1, num_pages + 1):
                 url_with_pages = url + '?p=' + str(page)
                 print('... Crawling ' + url_with_pages)
@@ -220,11 +211,70 @@ class LinkFinder():
             brand_counts += 1
 
         print("""---------------------------------
-                Stop crawling product URLs in Cellphones.com!
+                Stop crawling product URLs in Cellphones.com.vn!
                 ---------------------------------""")
 
-    def page_links(self):
-        return self.links
+    def getProductUrlTheGioiDiDong(self):
+        brand_counts = 0
+        list_phones_in_web = ["apple-iphone", "samsung", "oppo", "nokia", "asus-zenfone", "sony", "xiaomi"]
+        list_tablets_in_web = ["apple", "samsung", "xiaomi"]
+        brand_urls = list()
+        standard_phone_list = list()  # This list to store the phones without all the memory type
+        headers = {'User-Agent': 'User-Agent:Mozilla/5.0'}
 
-    def error(self, message):
-        pass
+        for brand in list_phones_in_web:
+            url = 'https://www.thegioididong.com/dtdd-' + brand + '#i:2'
+            brand_urls.append(url)
+
+        for url in brand_urls:
+            data1 = urllib.request.Request(url, headers=headers)
+            data = urllib.request.urlopen(data1).read()
+
+            try:
+                print("Open URL : " + url)
+                soup = BeautifulSoup(data, "lxml")
+            except Exception:
+                print('Exception : ' + str(Exception))
+                pass
+            product_ul = soup.find("ul", {"class": "homeproduct filter-cate"})
+            anchors = product_ul.find_all('a')
+            for anchor in anchors:
+                href = anchor.get('href')
+                href = 'https://www.thegioididong.com' + href
+                if '?' in href:
+                    href = href.split('?')[:-1][0]
+                standard_phone_list.append(href)
+
+        for url in standard_phone_list:
+            link_counts = 0
+            data1 = urllib.request.Request(url, headers=headers)
+            data = urllib.request.urlopen(data1).read()
+
+            try:
+                print("... Crawling " + url)
+                soup = BeautifulSoup(data, "lxml")
+            except Exception:
+                print('Exception : ' + str(Exception))
+                pass
+
+                # get the status of phone
+                span_status = soup.find("span", {"class": "productstatus"})
+                # Check if the status is none
+                if span_status is not None:
+                    # If the product 's status is "Ngừng kinh doanh' then continue to the next url
+                    if 'Ngừng kinh doanh'.lower() in span_status.get_text().lower(): continue
+                memmory_div = soup.find("span", {"class": "memory memory2 "})
+                # Check if there are more than 1 memory type of this phone
+                if memmory_div is None:
+                    print('... Crawling ' + url)
+                    self.links[self.list_brand[brand_counts], link_counts] = url
+                    self.total_links += 1
+                    link_counts += 1
+                else:
+                    anchors = memmory_div.find_all('a')
+                    for href in anchors:
+                        href = 'https://www.thegioididong.com' + href
+                        print('... Crawling ' + href)
+                        self.links[self.list_brand[brand_counts], link_counts] = href
+                        self.total_links += 1
+                        link_counts += 1
