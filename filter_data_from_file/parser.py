@@ -22,7 +22,7 @@ class Parser():
     def parseProductFromTiki(self, filename, fp):
         data = {}
 
-        soup = BeautifulSoup(fp, "lxml")
+        soup = BeautifulSoup(fp)
 
         # HTML2Text: for exact text from html
         h = html2text.HTML2Text()
@@ -49,7 +49,7 @@ class Parser():
         url = url[0]['href']
 
         # get the product name
-        name = soup.h1.text
+        name = soup.h1.text.strip()
 
         # get meaningful url: dien thoai nokia 105 dual sim 2017 hang chinh hang
         # convert - to ''
@@ -72,14 +72,14 @@ class Parser():
         if(len(category_temp) != 0):
             for i, element in enumerate(category_temp[0]):
                 if(i == 3):
-                    category = element.text
+                    category = element.text.strip()
 
         # get the store that tiki define
         store = soup.findAll("div", {"class": "current-seller"})
 
         # ensure the store is not empty
         if(len(store) != 0):
-            store = store[0].text
+            store = store[0].text.strip()
         else:
             store = ''
 
@@ -96,6 +96,8 @@ class Parser():
 
         # get the product description that tiki define
         description = product_description_1 + "\n" + product_description_2
+
+        description.strip()
 
         # get the origin and true price that adayroi define
         origin_price = soup.findAll("span", {"id": "span-list-price"})
@@ -157,7 +159,7 @@ class Parser():
         url = url[0]['href']
 
         # get the product name
-        name = soup.h1.text
+        name = soup.h1.text.strip()
 
         # get meaningful url: dien thoai nokia 105 dual sim 2017 hang chinh hang
         # convert - to ''
@@ -181,6 +183,7 @@ class Parser():
             for i, element in enumerate(category_temp[0]):
                 if(i == 4):
                     category = element.text
+                    category.strip()
 
         # get the store that adayroi define
         store = soup.findAll("div", {"class": "product-detail__sidebar__merchant"})
@@ -192,6 +195,8 @@ class Parser():
             store = ''
 
         store = store.split('bởi')[1]
+
+        store = store.strip()
 
         description_temp = soup.findAll("div", {"class": "short-des__content"})
         description_temp_2 = soup.findAll("div", {"class": "col-sm-12 detail__info"})
@@ -205,6 +210,8 @@ class Parser():
             product_description_2 = h.handle(str(description_temp_2[0]))
 
         description = product_description_1 + "\n" +  product_description_2
+
+        description.strip()
 
         # get the origin and true price that adayroi define
         origin_price = soup.findAll("span", {"class": "price-info__sale"})

@@ -1,6 +1,5 @@
-adayroi
 data
 *.pyc
 *.vscode
 fixed_crawl_url/.idea
-fixed_crawl_url/URL
+fixed_crawl_url/URL/*
