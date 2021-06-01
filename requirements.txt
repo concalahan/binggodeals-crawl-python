@@ -87,7 +87,7 @@ tornado==4.2.1
 traitlets==4.3.2
 Twisted==16.0.0
 unity-lens-photos==1.0
-urllib3==1.13.1
+urllib3==1.26.5
 w3lib==1.11.0
 wcwidth==0.1.7
 webencodings==0.5.1
